@@ -1,13 +1,231 @@
+@tailwind base;
+@tailwind comppage_headingnts;
+@tailwind utilities;
+
+
+
+@font-face {
+  font-family: Poppins;
+  src: url('./Font/Poppins/Poppins-Medium.ttf');
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: Poppins,'sans-serif';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #C89AE2;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+.herosection{
+  background-image: url(../public/Images/herosection_bg.jpg);
+}
+/* Base styles for menu items */
+.menu-item {
+  display: inline-block;
+  padding: 1rem;
+  text-decoration: none;
+  color: #4a5568; /* Slate-700 */
+  font-weight: 500;
+}
+
+/* Hover effect - Underline with animation */
+.menu-item:hover {
+  position: relative;
+}
+
+.menu-item:hover::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -3px; /* Adjust the thickness of the underline */
+  width: 100%;
+  height: 2px; /* Adjust the thickness of the underline */
+  background-color: #4a5568; /* Slate-700 */
+  animation: underline 0.3s ease-in-out forwards;
+}
+
+@keyframes underline {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* Active state - Underlined */
+.menu-item.active {
+  position: relative;
+}
+
+.menu-item.active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -3px; /* Adjust the thickness of the underline */
+  width: 100%;
+  height: 4px; /* Adjust the thickness of the underline */
+  background-color: #4a5568; /* Slate-700 */
+}
+
+.main_pg_link {
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  width: fit-content;
+  background-color: #5C699A;
+  border: npage_heading;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  margin:0px auto;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.main_pg_link span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.main_pg_link span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.main_pg_link:hover span {
+  padding-right: 25px;
+}
+
+.main_pg_link:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+.headings{
+  font-size: 35px;
+}
+.text{
+  font-size: 18px;
+  margin-right: 20px;
+}
+/* CSS for Fade In from Left animation */
+@keyframes fade-in-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* CSS for Fade In from Right animation */
+@keyframes fade-in-right {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Add delay of 2000ms */
+.animate-fade-in-left {
+  opacity: 0;
+  animation: fade-in-left 1s ease-in-out forwards;
+  animation-delay: 0s;
+}
+.animate-fade-in-center {
+  opacity: 0;
+  animation: fade-in-center 1s ease-in-out forwards;
+  animation-delay: 0s;
+}
+
+@keyframes fade-in-center {
+  0% {
+    opacity: 0;
+    transform: translate(0%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(5000);
+  }
+}
+
+.animate-fade-in-right {
+  opacity: 0;
+  animation: fade-in-right 1s ease-in-out forwards;
+  animation-delay: 0s;
+}
+
+.pg_heading{
+  display: flex;
+  justify-content: center;
+  font-size: 50px;
+padding-top: 50px;
+}
+h1 {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  font-family: "Raleway", sans-serif;
+  font-weight: 300;
+  font-size: 40px;
+  color: #080808;
+  -webkit-transition: all 0.4s ease 0s;
+  -o-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
+}
+
+h1 span {
+  display: block;
+  font-size: 0.5em;
+  line-height: 1.3;
+}
+.page_heading h1 {
+  text-align: center;
+
+  padding-bottom: 5px;
+}
+.page_heading h1:before {
+  width: 108px;
+  height: 5px;
+  display: block;
+  content: "";
+  position: absolute;
+  bottom: 3px;
+  left: 50%;
+  margin-left: -50px;
+  background-color: #b80000;
+}
+.about_img{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+}
+.img{
+  width: 600px;
+  height: 360px;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+}
+@media screen and (max-width: 768px) {
+  .img{
+    width: 320px;
+    height: 180px;
+    border-radius: 20px;
+  }
 }
