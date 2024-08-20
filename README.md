@@ -1,3 +1,8 @@
+Links to the other parts of Sign2Text have been attached below
+1) Frontend: https://github.com/AhmedKalair/sign2text
+2) Static: https://github.com/AhmedKalair/sign2text-static
+3) Backend: https://github.com/AhmedKalair/sign2text-backend
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
